@@ -32,6 +32,7 @@ public class RandomPool {
 			map1.put(lastKey, deleteIndex);
 			map2.remove(map2.size()-1);
 			map2.put(deleteIndex, lastKey);
+			index--;
 		}else {
 			throw new RuntimeException("not exist the key");
 		}
@@ -49,7 +50,7 @@ public class RandomPool {
 		rp.insert("key1");
 		rp.insert("key2");
 		rp.insert("key3");
-		
+		rp.delete("key2");
 		System.out.println(getRandom());
 	}
 }
