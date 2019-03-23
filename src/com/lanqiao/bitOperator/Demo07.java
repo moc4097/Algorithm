@@ -1,4 +1,4 @@
-package com.moc.lanqiao.bitOperator;
+package com.lanqiao.bitOperator;
 
 /**
  * 出现k次与出现1次(采用不进位相加法)

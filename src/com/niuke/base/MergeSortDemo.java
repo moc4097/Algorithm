@@ -11,6 +11,10 @@ public class MergeSortDemo {
 		sortProcess(arr,0,arr.length-1);
 	}
 	
+	/**
+	 * ∑«µ›πÈ µœ÷
+	 * @param arr
+	 */
 	public static void mergeSort2(int[] arr) {
 		if(arr==null&&arr.length<2) {
 			return;

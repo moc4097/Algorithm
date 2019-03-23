@@ -1,4 +1,4 @@
-package com.moc.lanqiao.bitOperator;
+package com.lanqiao.bitOperator;
 
 /**
  * 找出落单的数

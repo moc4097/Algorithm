@@ -313,14 +313,14 @@ public class MyLinkedList {
 		MyLinkedList list = new MyLinkedList();
 		list.add("adsa");
 		list.add("qwe");
-		list.add("zcxz");
+		/*list.add("zcxz");
 		list.addFirst("first");
 		list.add(1, "charu1");
 		list.addLast("last");
 		list.removeLast();
 		list.remove(0);
 		list.remove("zcxz");
-		System.out.println(list.size());
+		System.out.println(list.size());*/
 		Iterator iterator = list.iterator();
 		while(iterator.hasNext()) {
 			System.out.println(iterator.next());

@@ -2,6 +2,13 @@ package com.niuke.experiment;
 
 import java.util.Arrays;
 
+
+/**
+ * ÄæÐò¶Ô
+ * 
+ * @author Moc
+ *
+ */
 public class Merge_Inversion {
 
 	

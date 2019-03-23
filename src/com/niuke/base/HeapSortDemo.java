@@ -19,10 +19,16 @@ public class HeapSortDemo {
 	}
 	
 	public static void heapInsert(int[] arr,int index) {
-		while(arr[index]>arr[(index-1)/2]) {
-			swap(arr,index,(index-1)/2);
-			index=(index-1)/2;
+		int parentIndex = (index - 1) / 2;
+		//temp保存插入的节点值，用于最后的赋值
+		int temp = arr[index];
+		while(index > 0 && temp > arr[parentIndex]) {
+			//无需真正交换，单向赋值即可
+			arr[index] = arr[parentIndex];
+			index = parentIndex;
+			parentIndex = (parentIndex - 1) / 2;
 		}
+		arr[index] = temp; 
 	}
 	
 	public static void heapify(int[] arr,int index,int heapSize) {
@@ -36,6 +42,29 @@ public class HeapSortDemo {
 			swap(arr,index,largest);
 			index=largest;
 			left=index*2+1;
+		}
+	}
+	
+	public static void downAdjust(int[] arr, int parentIndex, int length) {
+		int temp = arr[parentIndex];
+		int childIndex = parentIndex * 2 + 1;
+		while(childIndex < length) {
+			if(childIndex + 1 < length && arr[childIndex + 1] > arr[childIndex]) {
+				childIndex++;
+			}
+			if(temp >= arr[childIndex]) {
+				break;
+			}
+			arr[parentIndex] = arr[childIndex];
+			parentIndex = childIndex;
+			childIndex= childIndex * 2 + 1;
+		}
+		arr[parentIndex] = temp;
+	}
+	
+	public static void buildHeap(int[] arr) {
+		for(int i = ((arr.length - 2) / 2); i >= 0; i--) {
+			downAdjust(arr, i, arr.length - 1);
 		}
 	}
 	
@@ -96,5 +125,13 @@ public class HeapSortDemo {
 		int[] arr=generateRandomArray(size,value);
 		heapSort(arr);
 		System.out.println(Arrays.toString(arr));
+		
+		/*int[] arr = new int[]{7, 1, 3, 10, 5, 2, 8, 9, 6};
+		buildHeap(arr);
+		System.out.println(Arrays.toString(arr));
+		System.out.println("====================================");
+		
+		arr = new int[]{7, 1, 3, 10, 5, 2, 8, 9, 6};
+		heapSort(arr);*/
 	}
 }
